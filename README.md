@@ -8,9 +8,13 @@ Incluye:
 ### Requisitos previos
  [Node js](https://nodejs.org/es/download/)
 
-### Instalación plantilla Vue
+### Hacer el clone
+git clone bla bla
+dentro de la carpeta previsor_frontend instalar:
 
-* ir a carpeta `plantilla vue`
-* instalar dependencias de node `npm install`
-* ejecutar `npm run dev`
-* generar distribuible `npm run build`
+npm install -g vue-cli
+
+luego, dentro de la carpeta plantilla-vue instalar:
+
+npm install chart.js chartkick hchs-vue-charts vue-chartjs vue-chartkick
+
