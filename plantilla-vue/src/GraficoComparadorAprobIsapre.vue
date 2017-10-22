@@ -1,86 +1,61 @@
 <template>
-    
-        
-    
-    <div id="grafico"  >
-            <ul class="prestador-list">
-      <li v-for="u,i in prestadores.slice(0,1)">
-        <schart :canvasId="canvasId"
-            :type='bar'
-            :width="width"
-            :height="height"
-            :data= "[
-                {name: prestadores[0].nombre, value: prestadores[0].codigo_sis},
-                {name: prestadores[1].nombre, value: prestadores[1].codigo_sis},
-                {name: prestadores[2].nombre, value: prestadores[2].codigo_sis},
-                {name: prestadores[3].nombre, value: prestadores[3].codigo_sis},
-                {name: prestadores[4].nombre, value: prestadores[4].codigo_sis},
-                {name: prestadores[5].nombre, value: prestadores[5].codigo_sis},
-                {name: prestadores[6].nombre, value: prestadores[6].codigo_sis},
-                {name: prestadores[7].nombre, value: prestadores[7].codigo_sis},
-                {name: prestadores[8].nombre, value: prestadores[8].codigo_sis},
-
-            ]"
-            
-            :options="options"
-        ></schart>
-        
-      </li>
-
-    </ul>
-           
-       
+  <section class="container">
+    <h1>Comparacion entre dos prestadores seleccionados</h1>
+    <div class="columns">
+      <div class="column">
+        <h3>Line Chart</h3>
+        <!--Line Chart Example-->
+        <chartjs-bar></chartjs-bar>
+      </div>
+      <div class="column">
+        <h3>Bar Chart</h3>
+        <!--Bar Chart Example-->
+        <chartjs-bar></chartjs-bar>
+      </div>
     </div>
-
-
-    
+    <div class="columns">
+      <div class="column">
+        <h3>Radar Chart</h3>
+        <!--Radar Chart Example-->
+        <chartjs-radar></chartjs-radar>
+      </div>
+      <div class="column">
+        <h3>Data Binding Line Chart</h3>
+        <!--Data Binding Line Chart Example-->
+        <!--form @submit.prevent="addData">
+          <input placeholder="Add a Data" v-model="dataentry">
+          <input placeholder="Add a Label" v-model="datalabel">
+          <button type="submit">Submit</button>
+        </form>
+        <chartjs-line :labels="labels" :data="dataset" :bind="true"></chartjs-line-->
+        <chartjs-line></chartjs-line>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-    import Schart from 'vue-schart';
-    //import algo from './otro.js';
-
-    
-export default {
-    
-
-    data() {
-
-        return {
-
-            prestadores:[],
-            
-            //var algo = 'pepe',
-            canvasId: 'myCanvas',
-            type: 'bar',
-            width: 1150,
-            height: 300,
-        
-            options: {
-                title: 'Grafico que representa la evaluacion positiva de la isapre'
-            }
-        }
-    },
-    components:{
-        Schart
-    },
-
-    mounted:function(){
-    console.log('Index.vue');
-
-    // GET /someUrl
-    this.$http.get('http://localhost:8082/previsor-back/prestador')
-    .then(response=>{
-       // get body data
-      this.prestadores = response.body;
-     console.log('prestadores',this.prestadores)
-    }, response=>{
-       // error callback
-       console.log('error cargando los prestadores');
-    })
-  }    
-    
-
-}
-
+  export default {
+    name: 'VueCharts',
+    data () {
+      return {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        dataset: [65, 59, 80, 81, 56, 55, 40]
+      }
+    }
+  }
 </script>
+
+<style scoped>
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  a {
+    color: #42b983;
+  }
+</style>

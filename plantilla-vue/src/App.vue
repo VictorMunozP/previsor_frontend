@@ -7,9 +7,8 @@
       </div>
       <nav>
         <a href="#/">Home</a>
-        <!--a href="#/actors">Lista</a-->
-        <!--a href="#/grafic">Grafico Isapres</a-->
         <a href="#/uno">Valoraciones</a>
+        <a href="#/grafic">Comparacion Prestadores</a>
         <a href="#/admin">Administración</a>
 
 

@@ -1,7 +1,5 @@
 <template>
-    
-        
-    
+
     <div id="grafico"  >
             <ul class="prestador-list">
       <li v-for="u,i in prestadores.slice(0,1)">
@@ -21,40 +19,40 @@
                 {name: prestadores[8].nombre, value: prestadores[8].codigo_sis},
 
             ]"
-            
+
             :options="options"
         ></schart>
-        
+
       </li>
 
     </ul>
-           
-        
-       
+
+
+
     </div>
-    
+
 </template>
 
 <script>
     import Schart from 'vue-schart';
     //import algo from './otro.js';
 
-    
+
 export default {
-    
+
 
     data() {
 
         return {
 
             prestadores:[],
-            
+
             //var algo = 'pepe',
             canvasId: 'myCanvas',
             type: 'pie',
             width: 800,
             height: 450,
-        
+
             options: {
                 title: 'Grafico que representa la evaluacion positiva de la isapre'
             }
@@ -77,8 +75,8 @@ export default {
        // error callback
        console.log('error cargando los prestadores');
     })
-  }    
-    
+  }
+
 
 }
 
